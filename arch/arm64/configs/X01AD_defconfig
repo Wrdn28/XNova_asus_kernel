@@ -1,5 +1,10 @@
+#
+# Automatically generated file; DO NOT EDIT.
+# Linux/arm64 4.9.337 Kernel Configuration
+#
+
 CONFIG_PSI=y
-CONFIG_LOCALVERSION="-Xnova-V0.1"
+CONFIG_LOCALVERSION="-Xnova-V1.2"
 CONFIG_BUILD_ARM64_DT_OVERLAY=y
 # CONFIG_LOCALVERSION_AUTO is not set
 # CONFIG_FHANDLE is not set
