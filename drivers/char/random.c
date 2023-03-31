@@ -63,37 +63,7 @@
 
 /*********************************************************************
  *
- * 2*(ENTROPY_SHIFT + log2(poolbits)) must <= 31, or the multiply in
- * credit_entropy_bits() needs to be 64 bits wide.
- */
-#define ENTROPY_SHIFT 3
-#define ENTROPY_BITS(r) ((r)->entropy_count >> ENTROPY_SHIFT)
-
-/*
- * The minimum number of bits of entropy before we wake up a read on
- * /dev/random.  Should be enough to do a significant reseed.
- */
-static int random_read_wakeup_bits = CONFIG_RANDOM_READ_WAKEUP_BITS;
-
-/*
- * If the entropy count falls under this number of bits, then we
- * should wake up processes which are selecting or polling on write
- * access to /dev/random.
- */
-static int random_write_wakeup_bits = CONFIG_RANDOM_WRITE_WAKEUP_BITS;
-
-/*
- * The minimum number of seconds between urandom pool reseeding.  We
- * do this to limit the amount of entropy that can be drained from the
- * input pool even if there are heavy demands on /dev/urandom.
- */
-static int random_min_urandom_seed = 60;
-
-/*
- * Originally, we used a primitive polynomial of degree .poolwords
- * over GF(2).  The taps for various sizes are defined below.  They
- * were chosen to be evenly spaced except for the last tap, which is 1
- * to get the twisting happening as fast as possible.
+ * Initialization and readiness waiting.
  *
  * Much of the RNG infrastructure is devoted to various dependencies
  * being able to wait until the RNG has collected enough entropy and
