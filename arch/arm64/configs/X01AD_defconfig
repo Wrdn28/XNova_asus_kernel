@@ -2,7 +2,7 @@
 # Automatically generated file; DO NOT EDIT.
 # Linux/arm64 4.9.337 Kernel Configuration
 #
-
+CONFIG_DEFAULT_MMAP_MIN_ADDR=4096
 CONFIG_PSI=y
 CONFIG_LOCALVERSION="-Xnova-V1.3"
 CONFIG_BUILD_ARM64_DT_OVERLAY=y
