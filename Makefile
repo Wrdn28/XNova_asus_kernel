@@ -736,9 +736,6 @@ endif
 ifdef CONFIG_CC_OPTIMIZE_FOR_SIZE
 KBUILD_CFLAGS   += -Os
 else
-<<<<<<< HEAD
-KBUILD_CFLAGS   += -O2
-=======
 KBUILD_CFLAGS	+= -O3 -march=armv8-a+crypto+crc -mtune=cortex-a53 -mcpu=cortex-a53+crypto+crc
 ifeq ($(cc-name),clang)
 KBUILD_CFLAGS	+= -mllvm -polly \
@@ -750,7 +747,6 @@ KBUILD_CFLAGS	+= -mllvm -polly \
 		   -mllvm -polly-vectorizer=stripmine \
 		   -mllvm -polly-invariant-load-hoisting
 endif
->>>>>>> 00cb1c026fe8 (Makefile: tuning optimizations)
 endif
 
 ifdef CONFIG_CC_WERROR
