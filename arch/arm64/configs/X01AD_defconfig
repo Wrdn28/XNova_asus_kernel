@@ -1,7 +1,8 @@
 #
 # Automatically generated file; DO NOT EDIT.
 # Linux/arm64 4.9.337 Kernel Configuration
-#
+
+CONFIG_RELOCATABLE=y
 CONFIG_DEFAULT_MMAP_MIN_ADDR=4096
 CONFIG_PSI=y
 CONFIG_LOCALVERSION="-Xnova-V1.4-KernelSU"
